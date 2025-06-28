@@ -1,0 +1,6 @@
+__pycache__/
+venv/
+
+#flask
+instance/
+.webassets-cache
