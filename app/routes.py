@@ -4,7 +4,7 @@ from datetime import datetime
 from . import db
 from .models import Patient
 from flask import current_app as app
-from form_classes import PatientForm
+from .form_classes import PatientForm
 
 @app.route('/')
 def home():
