@@ -1,9 +1,10 @@
 # Patient Portal
 
 ## To run
-1. activate virtual environment with `source venv/bin/activate`
-2. install dependencies with `pip install -r requirements.txt`
-3. run application with `python3 run.py`
+1. create a virtual environment such as `python3 -m venv venv`
+2. activate virtual environment such as `source venv/bin/activate`
+3. install dependencies with `pip install -r requirements.txt`
+4. run application with `python3 run.py`
 
 ## Additional Questions
 1. Form validation is handled by Flask-WTF, which integrates WTForms for validation and rendering

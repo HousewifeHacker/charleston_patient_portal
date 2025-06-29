@@ -4,3 +4,5 @@ venv/
 #flask
 instance/
 .webassets-cache
+
+**.DS_Store
