@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+<header>
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal text-body-emphasis">New Patient</h1>
+    </div>
+</header>
+
+<main>
+    <form method="post" action="{{ url_for('add_patient')}}" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="row mb-3 text-center justify-content-center">
+            <div class="col-md-8">
+                <!-- TODO display any form errors -->
+                <p>
+                    {{ form.first_name.label }}<br>
+                    {{ form.first_name(size=32) }}
+                    {% if form.first_name.errors %}
+                    <ul>
+                        {% for error in form.first_name.errors %}
+                        {{error}}
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </p>
+                <p>
+                    {{ form.last_name.label }}<br>
+                    {{ form.last_name(size=32) }}
+                    {% if form.last_name.errors %}
+                    <ul>
+                        {% for error in form.last_name.errors %}
+                        {{error}}
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </p>
+                <p>
+                    {{ form.dob.label }}<br>
+                    {{ form.dob() }}
+                    {% if form.dob.errors %}
+                    <ul>
+                        {% for error in form.dob.errors %}
+                        {{error}}
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </p>
+                <p>
+                    {{ form.physician.label }}<br>
+                    {{ form.physician(size=32) }}
+                    {% if form.physician.errors %}
+                    <ul>
+                        {% for error in form.physician.errors %}
+                        {{error}}
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </p>
+                <p>{{ form.submit() }}</p>
+            </div>
+        </div>
+    </form>
+</main>
+                
+
+{% endblock %}

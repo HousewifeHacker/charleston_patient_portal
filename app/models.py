@@ -21,17 +21,19 @@ class Patient(BaseModel):
     first_name = db.Column(db.String(100), nullable=False)
     last_name = db.Column(db.String(100), nullable=False)
     dob = db.Column(db.Date, nullable=False)
+    physician = db.Column(db.String(100), nullable=False)
 
-    # auto generated on init
+    # auto generated
     created_at = db.Column(db.DateTime(timezone=True), nullable=False, default=datetime.now(timezone.utc))
     updated_at = db.Column(db.DateTime(timezone=True), onupdate=datetime.now(timezone.utc), nullable=True)
     active = db.Column(db.Boolean(), default=True)
 
     # not necessary for sqlalchemy but helpful for code completion during development
-    def __init__(self, first_name, last_name, dob):
+    def __init__(self, first_name, last_name, dob, physician):
         self.first_name = first_name
         self.last_name = last_name
         self.dob = dob
+        self.physician = physician
 
     def __repr__(self):
         return f"<Patient {self.first_name} {self.last_name}>"
